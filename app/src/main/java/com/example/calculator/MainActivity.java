@@ -52,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onRestart() {
         super.onRestart();
     }
+
     public void openSimpleCalculator(View view) {
         Intent intent = new Intent(this, SimpleCalculator.class);
         startActivity(intent);
