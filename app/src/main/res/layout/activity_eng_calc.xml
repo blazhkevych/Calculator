@@ -8,4 +8,24 @@
     android:layout_margin="2.5dp"
     tools:context=".EngineeringCalculator">
 
+    <include
+        android:id="@+id/eng_calc_inputs_from_to_layout"
+        layout="@layout/eng_calc_inputs_from_to_layout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/eng_calc_buttons_layout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <include
+        android:id="@+id/eng_calc_buttons_layout"
+        layout="@layout/eng_calc_buttons_layout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/eng_calc_inputs_from_to_layout" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

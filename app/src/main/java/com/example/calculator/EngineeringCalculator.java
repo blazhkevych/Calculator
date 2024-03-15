@@ -12,6 +12,18 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class EngineeringCalculator extends AppCompatActivity {
 
+    String[] units_of_length = {
+            "Nanometers",
+            "Microns",
+            "Millimeters",
+            "Centimeters",
+            "Meters",
+            "Kilometers",
+            "Inches",
+            "Feet",
+            "Yards",
+            "Miles"};
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,17 +34,20 @@ public class EngineeringCalculator extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-    }
 
-    /*Spinner spinner = (Spinner) findViewById(R.id.length_spinner_from);
-    // Create an ArrayAdapter using the string array and a default spinner layout.
-    ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
-            this,
-            R.array.length_array,
-            android.R.layout.simple_spinner_item
-    );
-// Specify the layout to use when the list of choices appears.
-adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-// Apply the adapter to the spinner.
-spinner.setAdapter(adapter);*/
+        // Спиннер для выбора единиц измерения длины которые будут использоваться как входные данные для конвертации в другие единицы измерения
+        Spinner spinner_input = findViewById(R.id.length_spinner_input);
+        // Создаем адаптер ArrayAdapter с помощью массива строк и стандартной разметки элемета spinner
+        ArrayAdapter<String> adapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item, units_of_length);
+        // Определяем разметку для использования при выборе элемента
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        // Применяем адаптер к элементу spinner
+        spinner_input.setAdapter(adapter);
+
+        // Спиннер для выбора единиц измерения длины которые будут использоваться как выходные данные для конвертации из других единиц измерения
+
+
+
+
+    }
 }
